@@ -1,0 +1,924 @@
+    1  systemctl set-default multi-user.target 
+    2  systemctl stop firewalld.service 
+    3  systemctl disable firewalld.service 
+    4  vim /etc/selinux/config 
+    5  grubby --update-kernel=ALL --args="console=ttyS0"
+    6  reboot 
+    7  ls /etc/yum.repos.d/
+    8  vi /etc/yum.repos.d/rhel7.repo
+    9  yum repolist
+   10  vi /etc/yum.repos.d/rhel7.repo
+   11  hostnamectl set-hostname sr9
+   12  exit
+   13  ifconfig | head -20
+   14  ifconfig | head -30
+   15  ls
+   16  yum -y install gcc pcre-devel openssl-devel
+   17  tar  -xf nginx-1.12.2.tar.gz
+   18  cd  nginx-1.12.2
+   19  ./configure --prefix=/usr/local/nginx  --user=nginx   --group=nginx   --with-http_ssl_module
+   20  make && make install
+   21  /usr/local/nginx/sbin/nginx
+   22  make && make install
+   23  /usr/local/nginx/sbin/nginx
+   24  ./configure --prefix=/usr/local/nginx  --user=nginx   --group=nginx   --with-http_ssl_module
+   25  make && make install
+   26  /usr/local/nginx/sbin/nginx
+   27  yum -y install gcc pcre-devel openssl-devel
+   28   cd  nginx-1.12.2
+   29  ./configure --prefix=/usr/local/nginx  --user=nginx   --group=nginx   --with-http_ssl_module
+   30   useradd -s /sbin/nologin nginx
+   31  ./configure --prefix=/usr/local/nginx  --user=nginx   --group=nginx   --with-http_ssl_module
+   32  make && make install
+   33  /usr/local/nginx/sbin/nginx
+   34  /usr/local/nginx/sbin/nginx -V
+   35  ln -s /usr/local/nginx/sbin/nginx /sbin/ 
+   36   yum  -y  install  httpd
+   37  ifconfig
+   38  echo "201.1.2.100" > /var/www/html/index.html 
+   39  nginx -s stop
+   40  systemctl restart httpd
+   41   firewall-cmd --set-default-zone=trusted
+   42  setenforce 0
+   43  ifconfig
+   44  yum -y install gcc openssl-devel pcre-devel zlib-devel
+   45  useradd -s /sbin/nologin  nginx
+   46  tar -xvf nginx-1.12.2.tar.gz
+   47  cd nginx-1.12.2
+   48  ./configure  --user=nginx   --group=nginx --with-http_ssl_module
+   49  make && make install
+   50  yum -y install   mariadb   mariadb-server   mariadb-devel
+   51  yum -y  install  php   php-mysql
+   52  ls
+   53  cd ..
+   54  ls
+   55  tar -xf lnmp_soft.tar.gz 
+   56  ls
+   57  cd lnmp_soft
+   58  ls
+   59  yum -y  install php-fpm-5.4.16-42.el7.x86_64.rpm
+   60  systemctl stop httpd        
+   61  /usr/local/nginx/sbin/nginx 
+   62   netstat -utnlp | grep :80
+   63  systemctl start  mariadb 
+   64    正在安装    : php-fpm-5.4.16-42.el7.x86_64                                      
+   65  systemctl status mariadb
+   66  systemctl enable mariadb
+   67  systemctl start php-fpm
+   68  systemctl status php-fpm
+   69  systemctl enable php-fpm
+   70  firewall-cmd --set-default-zone=trusted
+   71  setenforce 0
+   72  history
+   73  ls
+   74  cd php_scripts/
+   75  ls
+   76  vim /etc/php-fpm.d/www.conf
+   77  vim /usr/local/nginx/conf/nginx.conf
+   78  ls /usr/local/nginx/conf/
+   79  cat /usr/local/nginx/conf/fastcgi.conf
+   80   /usr/local/nginx/sbin/nginx -s reload
+   81  vim /usr/local/nginx/conf/nginx.conf
+   82   /usr/local/nginx/sbin/nginx -s reload
+   83  vim /usr/local/nginx/html/test1.php
+   84   /usr/local/nginx/sbin/nginx -s reload
+   85  firefox http://201.1.1.5/test1.php
+   86  vim /usr/local/nginx/html/test1.php
+   87  firefox http://201.1.1.5/test1.php
+   88  firefox http://201.1.1.5/test2.php
+   89   systemctl status mariadb 
+   90  systemctl status php-fpm 
+   91  ifconfig
+   92  firefox http://201.1.2.200/test2.php
+   93  firefox http://201.1.2.100/test2.php
+   94  vim /usr/local/nginx/html/test2.php
+   95  firefox http://201.1.2.100/test2.php
+   96  mysql
+   97  vim /usr/local/nginx/html/test2.php
+   98  firefox http://201.1.2.100/test2.php
+   99  vim /usr/local/nginx/html/test2.php
+  100  mysqladmin -u root password "123456"
+  101  vim /usr/local/nginx/html/test2.php
+  102  firefox http://201.1.2.100/test2.php
+  103  systemctl restart php-fpm 
+  104  firefox http://201.1.2.100/test2.php
+  105  mysql -u root
+  106  mysql 
+  107  mysql -uroot -p123456
+  108  vim /usr/local/nginx/html/test2.php
+  109  ifconfig
+  110  vim /usr/local/nginx/html/test2.php
+  111  firefox http://201.1.2.100/test2.php
+  112  vim /usr/local/nginx/html/test2.php
+  113  firefox http://201.1.2.100/test2.php
+  114  ifconfig
+  115  vim /usr/local/nginx/html/test1.php
+  116  vim /usr/local/nginx/html/test2.php
+  117  firefox http://201.1.2.100/test2.php
+  118  ls /usr/local/nginx/html/
+  119  mv /usr/local/nginx/html/test2.php /usr/local/nginx/html/index.php
+  120  ls /usr/local/nginx/html/
+  121  vim /usr/local/nginx/conf/nginx.conf
+  122  nginx -s reload
+  123  ls /usr/local/nginx/html/
+  124  firefox http://201.1.2.100/test1.php
+  125  firefox http://201.1.2.100/index.php
+  126  ls /usr/local/nginx/html/
+  127  rm -rf /usr/local/nginx/html/test1.php
+  128  firefox http://201.1.2.100/index.html
+  129  ls /usr/local/nginx/html/
+  130  echo "sr9" > /usr/local/nginx/html/index.html
+  131  vim /usr/local/nginx/conf/nginx.conf
+  132   yum  -y  install  httpd
+  133   ls  ~/.ssh/id_*
+  134  ssh-keygen 
+  135   ls  ~/.ssh/id_*
+  136  ssh-copy-id  root@201.1.2.200
+  137  ssh  root@201.1.2.200
+  138  vim  /root/isync.sh
+  139   chmod  +x  /root/isync.sh
+  140  ls
+  141  cd ~
+  142  ls
+  143  cd lnmp_soft/
+  144  ls
+  145  yum list | grep inotify-tools
+  146  ifconfig
+  147  tar  xf  inotify-tools-3.13.tar.gz  -C  /usr/src/
+  148  tar  xf  /root/inotify-tools-3.13.tar.gz  -C  /usr/src/
+  149  cd  /usr/src/inotify-tools-3.13/
+  150  ./configure
+  151   make install
+  152   make 
+  153  inotifywait --help
+  154  ls
+  155  ./configure
+  156  make && make install
+  157   inotifywait --help
+  158  /root/isync.sh
+  159  pgrep  -l  inotify  
+  160  ls /usr/local/nginx/html/
+  161  echo "a" >  /usr/local/nginx/html/a.html
+  162  ls /usr/local/nginx/html/a.html
+  163  ls /usr/local/nginx/html/
+  164  rm -rf /usr/local/nginx/html/a.html 
+  165  nginx -s reload
+  166  ls /usr/local/nginx/html/
+  167  cp /usr/local/nginx/html/index.php /usr/local/nginx/html/index1.php 
+  168  rm -rf /usr/local/nginx/html/index1.php 
+  169  nginx -s reload
+  170  vim /usr/local/nginx/conf/nginx.conf
+  171  systemctl stop httpd
+  172  systemctl start httpd
+  173  nginx -s stop
+  174  nginx 
+  175  nginx -s stop
+  176  nginx 
+  177  history
+  178  ls /usr/local/nginx/html/ 
+  179  echo "a" >  /usr/local/nginx/html/a.html 
+  180  ls /usr/local/nginx/html/ 
+  181  history
+  182  cat /root/isync.sh
+  183  pgrep  -l  inotify 
+  184  kill 28752
+  185  pgrep  -l  inotify 
+  186  /root/isync.sh
+  187  pgrep  -l  inotify 
+  188  kill 28800
+  189  history
+  190   /root/isync.sh
+  191  cat  /root/isync.sh
+  192  cd ~
+  193  vim /usr/local/nginx/conf/nginx.conf
+  194  nginx -s reload
+  195  vim /usr/local/nginx/conf/nginx.conf
+  196  cd /var/lib/php/session
+  197  ls
+  198  cd ~
+  199  vim /usr/local/nginx/conf/nginx.conf
+  200  /usr/local/nginx/sbin/nginx -s reload
+  201  vim /usr/local/nginx/conf/nginx.conf
+  202  ls
+  203  cd lnmp_soft/
+  204  ls
+  205  cd php_scripts/
+  206  ls
+  207  pwd
+  208  cp /root/lnmp_soft/php_scripts/* /usr/local/nginx/html/
+  209  ls /usr/local/nginx/html/
+  210  ls
+  211  ifconfig
+  212  nginx -s reload
+  213  ls /usr/local/nginx/html/
+  214  cat /usr/local/nginx/html/mysql.php 
+  215  vi /usr/local/nginx/html/mysql.php
+  216  nginx -s reload
+  217  vi /usr/local/nginx/html/index.php
+  218  vi /usr/local/nginx/html/mysql.php
+  219  nginx -s reload
+  220  ls  /usr/local/nginx/html
+  221  vi /usr/local/nginx/html/mem.php 
+  222  tar -xf  /usr/local/nginx/html/php-memcached-demo.tar.gz 
+  223  ls  /usr/local/nginx/html/
+  224  cat /usr/local/nginx/html/index.php 
+  225  ls  /usr/local/nginx/html/
+  226  cat /usr/local/nginx/html/index.html 
+  227  ls  /usr/local/nginx/html/
+  228  cat  /usr/local/nginx/html/test.php 
+  229  ls
+  230  cd php-memcached-demo/
+  231  ls
+  232  pwd
+  233  cp /root/lnmp_soft/php_scripts/php-memcached-demo/* /usr/local/nginx/html/
+  234  cd /usr/local/nginx/html/
+  235  ls
+  236  cat index.php 
+  237  cd /var/lib/php/session/ 
+  238  ls
+  239  cat /etc/php-fpm.d/www.conf
+  240  cat /var/lib/php/session
+  241  ls /var/lib/php/session
+  242  ls
+  243  cat sess_k3hgqpuhu9g0n71l2fvchol9o3
+  244  ls
+  245  cat sess_k3hgqpuhu9g0n71l2fvchol9o3
+  246  yum -y install  php-pecl-memcache
+  247  vim  /etc/php-fpm.d/www.conf
+  248  ifconfig
+  249  vim  /etc/php-fpm.d/www.conf
+  250  systemctl  restart  php-fpm
+  251  rm -rf /var/lib/php/session/*
+  252  ls
+  253  cd /usr/local/nginx/html/
+  254  ls
+  255  vi index.php
+  256  vi /usr/local/nginx/html/index.php 
+  257  cat /usr/local/nginx/html/index.php
+  258  cd ~
+  259  ls
+  260  cat isync.sh 
+  261  ls /var/lib/php/session/
+  262  eixt
+  263  exit
+  264  nmcli connection add type ethernet con-name eth3 ifname eth3
+  265  nmcli connection modify "eth3" ipv4.method manual ipv4.addresses "201.1.2.100/24" connection.autoconnect yes
+  266  nmcli connection up "eth3"
+  267  sr10
+  268  yum repolist
+  269  ifconfig
+  270  yum -y install java
+  271  yum -y install java-1.8.0-openjdk-headless
+  272  java -version
+  273  ls
+  274  cd lnmp_soft/
+  275  ls
+  276  tar -xf apache-tomcat-8.0.30.tar.gz 
+  277  mv apache-tomcat-8.0.30 /usr/local/tomcat
+  278  ls /usr/local/tomcat
+  279  /usr/local/tomcat/bin/startup.sh 
+  280  setenforce 0
+  281  netstat -nutlp | grep java
+  282  firefox http://201.1.2.100
+  283  firefox http://201.1.2.100:8080
+  284  vim /usr/local/tomcat/webapps/ROOT/test.jsp
+  285  /usr/local/tomcat/bin/shutdown.sh 
+  286  /usr/local/tomcat/bin/startup.sh 
+  287  netstat -nutlp | grep java
+  288  vim /usr/local/tomcat/conf/server.xml
+  289  mkdir -p /usr/local/tomcat/{a,b}/ROOT
+  290  echo "AAA" > /usr/local/tomcat/a/ROOT/index.html
+  291  echo "BBB" > /usr/local/tomcat/b/ROOT/index.html
+  292  /usr/local/tomcat/bin/shutdown.sh
+  293  /usr/local/tomcat/bin/startup.sh
+  294  ifconfig 
+  295  /usr/local/tomcat/bin/startup.sh
+  296  echo "AAA"   > /usr/local/tomcat/a/ROOT/index.html
+  297  echo "BBB" > /usr/local/tomcat/b/ROOT/index.html
+  298  /usr/local/tomcat/bin/shutdown.sh
+  299  /usr/local/tomcat/bin/startup.sh
+  300  netstat -nutlp |grep java
+  301  firefox http://www.a.com:8080/
+  302  firefox http://www.a.com:8080/tes
+  303  firefox http://www.a.com:8080/test
+  304  echo "Test" > /var/www/html/index.html 
+  305  vim /usr/local/tomcat/conf/server.xml
+  306  /usr/local/tomcat/bin/shutdown.sh
+  307  /usr/local/tomcat/bin/startup.sh
+  308  vim /usr/local/tomcat/conf/server.xml
+  309  keytool -genkeypair -alias tomcat -keyalg RSA -keystore /usr/local/tomcat/keystore
+  310  vim /usr/local/tomcat/conf/server.xml
+  311   /usr/local/tomcat/bin/shutdown.sh
+  312  /usr/local/tomcat/bin/startup.sh
+  313  netstat -nutlp |grep java
+  314  /usr/local/tomcat/bin/startup.sh
+  315  ls /usr/local/
+  316  ls /usr/local/tomcat/
+  317  ifconfig
+  318  vim /usr/local/tomcat/conf/server.xml
+  319   /usr/local/tomcat/bin/shutdown.sh
+  320  /usr/local/tomcat/bin/startup.sh
+  321  vim /usr/local/tomcat/conf/server.xml
+  322   /usr/local/tomcat/bin/shutdown.sh
+  323  /usr/local/tomcat/bin/startup.sh
+  324  vim /usr/local/tomcat/conf/server.xml
+  325  ls /usr/local/tomcat/
+  326  ls /usr/local/tomcat/logs/
+  327  cat /usr/local/tomcat/logs/a_log.2018-05-31.txt 
+  328  history > /root/tomcat.txt
+    1  systemctl set-default multi-user.target 
+    2  systemctl stop firewalld.service 
+    3  systemctl disable firewalld.service 
+    4  vim /etc/selinux/config 
+    5  grubby --update-kernel=ALL --args="console=ttyS0"
+    6  reboot 
+    7  ls /etc/yum.repos.d/
+    8  vi /etc/yum.repos.d/rhel7.repo
+    9  yum repolist
+   10  vi /etc/yum.repos.d/rhel7.repo
+   11  hostnamectl set-hostname sr9
+   12  exit
+   13  ifconfig | head -20
+   14  ifconfig | head -30
+   15  ls
+   16  yum -y install gcc pcre-devel openssl-devel
+   17  tar  -xf nginx-1.12.2.tar.gz
+   18  cd  nginx-1.12.2
+   19  ./configure --prefix=/usr/local/nginx  --user=nginx   --group=nginx   --with-http_ssl_module
+   20  make && make install
+   21  /usr/local/nginx/sbin/nginx
+   22  make && make install
+   23  /usr/local/nginx/sbin/nginx
+   24  ./configure --prefix=/usr/local/nginx  --user=nginx   --group=nginx   --with-http_ssl_module
+   25  make && make install
+   26  /usr/local/nginx/sbin/nginx
+   27  yum -y install gcc pcre-devel openssl-devel
+   28   cd  nginx-1.12.2
+   29  ./configure --prefix=/usr/local/nginx  --user=nginx   --group=nginx   --with-http_ssl_module
+   30   useradd -s /sbin/nologin nginx
+   31  ./configure --prefix=/usr/local/nginx  --user=nginx   --group=nginx   --with-http_ssl_module
+   32  make && make install
+   33  /usr/local/nginx/sbin/nginx
+   34  /usr/local/nginx/sbin/nginx -V
+   35  ln -s /usr/local/nginx/sbin/nginx /sbin/ 
+   36   yum  -y  install  httpd
+   37  ifconfig
+   38  echo "201.1.2.100" > /var/www/html/index.html 
+   39  nginx -s stop
+   40  systemctl restart httpd
+   41   firewall-cmd --set-default-zone=trusted
+   42  setenforce 0
+   43  ifconfig
+   44  yum -y install gcc openssl-devel pcre-devel zlib-devel
+   45  useradd -s /sbin/nologin  nginx
+   46  tar -xvf nginx-1.12.2.tar.gz
+   47  cd nginx-1.12.2
+   48  ./configure  --user=nginx   --group=nginx --with-http_ssl_module
+   49  make && make install
+   50  yum -y install   mariadb   mariadb-server   mariadb-devel
+   51  yum -y  install  php   php-mysql
+   52  ls
+   53  cd ..
+   54  ls
+   55  tar -xf lnmp_soft.tar.gz 
+   56  ls
+   57  cd lnmp_soft
+   58  ls
+   59  yum -y  install php-fpm-5.4.16-42.el7.x86_64.rpm
+   60  systemctl stop httpd        
+   61  /usr/local/nginx/sbin/nginx 
+   62   netstat -utnlp | grep :80
+   63  systemctl start  mariadb 
+   64    正在安装    : php-fpm-5.4.16-42.el7.x86_64                                      
+   65  systemctl status mariadb
+   66  systemctl enable mariadb
+   67  systemctl start php-fpm
+   68  systemctl status php-fpm
+   69  systemctl enable php-fpm
+   70  firewall-cmd --set-default-zone=trusted
+   71  setenforce 0
+   72  history
+   73  ls
+   74  cd php_scripts/
+   75  ls
+   76  vim /etc/php-fpm.d/www.conf
+   77  vim /usr/local/nginx/conf/nginx.conf
+   78  ls /usr/local/nginx/conf/
+   79  cat /usr/local/nginx/conf/fastcgi.conf
+   80   /usr/local/nginx/sbin/nginx -s reload
+   81  vim /usr/local/nginx/conf/nginx.conf
+   82   /usr/local/nginx/sbin/nginx -s reload
+   83  vim /usr/local/nginx/html/test1.php
+   84   /usr/local/nginx/sbin/nginx -s reload
+   85  firefox http://201.1.1.5/test1.php
+   86  vim /usr/local/nginx/html/test1.php
+   87  firefox http://201.1.1.5/test1.php
+   88  firefox http://201.1.1.5/test2.php
+   89   systemctl status mariadb 
+   90  systemctl status php-fpm 
+   91  ifconfig
+   92  firefox http://201.1.2.200/test2.php
+   93  firefox http://201.1.2.100/test2.php
+   94  vim /usr/local/nginx/html/test2.php
+   95  firefox http://201.1.2.100/test2.php
+   96  mysql
+   97  vim /usr/local/nginx/html/test2.php
+   98  firefox http://201.1.2.100/test2.php
+   99  vim /usr/local/nginx/html/test2.php
+  100  mysqladmin -u root password "123456"
+  101  vim /usr/local/nginx/html/test2.php
+  102  firefox http://201.1.2.100/test2.php
+  103  systemctl restart php-fpm 
+  104  firefox http://201.1.2.100/test2.php
+  105  mysql -u root
+  106  mysql 
+  107  mysql -uroot -p123456
+  108  vim /usr/local/nginx/html/test2.php
+  109  ifconfig
+  110  vim /usr/local/nginx/html/test2.php
+  111  firefox http://201.1.2.100/test2.php
+  112  vim /usr/local/nginx/html/test2.php
+  113  firefox http://201.1.2.100/test2.php
+  114  ifconfig
+  115  vim /usr/local/nginx/html/test1.php
+  116  vim /usr/local/nginx/html/test2.php
+  117  firefox http://201.1.2.100/test2.php
+  118  ls /usr/local/nginx/html/
+  119  mv /usr/local/nginx/html/test2.php /usr/local/nginx/html/index.php
+  120  ls /usr/local/nginx/html/
+  121  vim /usr/local/nginx/conf/nginx.conf
+  122  nginx -s reload
+  123  ls /usr/local/nginx/html/
+  124  firefox http://201.1.2.100/test1.php
+  125  firefox http://201.1.2.100/index.php
+  126  ls /usr/local/nginx/html/
+  127  rm -rf /usr/local/nginx/html/test1.php
+  128  firefox http://201.1.2.100/index.html
+  129  ls /usr/local/nginx/html/
+  130  echo "sr9" > /usr/local/nginx/html/index.html
+  131  vim /usr/local/nginx/conf/nginx.conf
+  132   yum  -y  install  httpd
+  133   ls  ~/.ssh/id_*
+  134  ssh-keygen 
+  135   ls  ~/.ssh/id_*
+  136  ssh-copy-id  root@201.1.2.200
+  137  ssh  root@201.1.2.200
+  138  vim  /root/isync.sh
+  139   chmod  +x  /root/isync.sh
+  140  ls
+  141  cd ~
+  142  ls
+  143  cd lnmp_soft/
+  144  ls
+  145  yum list | grep inotify-tools
+  146  ifconfig
+  147  tar  xf  inotify-tools-3.13.tar.gz  -C  /usr/src/
+  148  tar  xf  /root/inotify-tools-3.13.tar.gz  -C  /usr/src/
+  149  cd  /usr/src/inotify-tools-3.13/
+  150  ./configure
+  151   make install
+  152   make 
+  153  inotifywait --help
+  154  ls
+  155  ./configure
+  156  make && make install
+  157   inotifywait --help
+  158  /root/isync.sh
+  159  pgrep  -l  inotify  
+  160  ls /usr/local/nginx/html/
+  161  echo "a" >  /usr/local/nginx/html/a.html
+  162  ls /usr/local/nginx/html/a.html
+  163  ls /usr/local/nginx/html/
+  164  rm -rf /usr/local/nginx/html/a.html 
+  165  nginx -s reload
+  166  ls /usr/local/nginx/html/
+  167  cp /usr/local/nginx/html/index.php /usr/local/nginx/html/index1.php 
+  168  rm -rf /usr/local/nginx/html/index1.php 
+  169  nginx -s reload
+  170  vim /usr/local/nginx/conf/nginx.conf
+  171  systemctl stop httpd
+  172  systemctl start httpd
+  173  nginx -s stop
+  174  nginx 
+  175  nginx -s stop
+  176  nginx 
+  177  history
+  178  ls /usr/local/nginx/html/ 
+  179  echo "a" >  /usr/local/nginx/html/a.html 
+  180  ls /usr/local/nginx/html/ 
+  181  history
+  182  cat /root/isync.sh
+  183  pgrep  -l  inotify 
+  184  kill 28752
+  185  pgrep  -l  inotify 
+  186  /root/isync.sh
+  187  pgrep  -l  inotify 
+  188  kill 28800
+  189  history
+  190   /root/isync.sh
+  191  cat  /root/isync.sh
+  192  cd ~
+  193  vim /usr/local/nginx/conf/nginx.conf
+  194  nginx -s reload
+  195  vim /usr/local/nginx/conf/nginx.conf
+  196  cd /var/lib/php/session
+  197  ls
+  198  cd ~
+  199  vim /usr/local/nginx/conf/nginx.conf
+  200  /usr/local/nginx/sbin/nginx -s reload
+  201  vim /usr/local/nginx/conf/nginx.conf
+  202  ls
+  203  cd lnmp_soft/
+  204  ls
+  205  cd php_scripts/
+  206  ls
+  207  pwd
+  208  cp /root/lnmp_soft/php_scripts/* /usr/local/nginx/html/
+  209  ls /usr/local/nginx/html/
+  210  ls
+  211  ifconfig
+  212  nginx -s reload
+  213  ls /usr/local/nginx/html/
+  214  cat /usr/local/nginx/html/mysql.php 
+  215  vi /usr/local/nginx/html/mysql.php
+  216  nginx -s reload
+  217  vi /usr/local/nginx/html/index.php
+  218  vi /usr/local/nginx/html/mysql.php
+  219  nginx -s reload
+  220  ls  /usr/local/nginx/html
+  221  vi /usr/local/nginx/html/mem.php 
+  222  tar -xf  /usr/local/nginx/html/php-memcached-demo.tar.gz 
+  223  ls  /usr/local/nginx/html/
+  224  cat /usr/local/nginx/html/index.php 
+  225  ls  /usr/local/nginx/html/
+  226  cat /usr/local/nginx/html/index.html 
+  227  ls  /usr/local/nginx/html/
+  228  cat  /usr/local/nginx/html/test.php 
+  229  ls
+  230  cd php-memcached-demo/
+  231  ls
+  232  pwd
+  233  cp /root/lnmp_soft/php_scripts/php-memcached-demo/* /usr/local/nginx/html/
+  234  cd /usr/local/nginx/html/
+  235  ls
+  236  cat index.php 
+  237  cd /var/lib/php/session/ 
+  238  ls
+  239  cat /etc/php-fpm.d/www.conf
+  240  cat /var/lib/php/session
+  241  ls /var/lib/php/session
+  242  ls
+  243  cat sess_k3hgqpuhu9g0n71l2fvchol9o3
+  244  ls
+  245  cat sess_k3hgqpuhu9g0n71l2fvchol9o3
+  246  yum -y install  php-pecl-memcache
+  247  vim  /etc/php-fpm.d/www.conf
+  248  ifconfig
+  249  vim  /etc/php-fpm.d/www.conf
+  250  systemctl  restart  php-fpm
+  251  rm -rf /var/lib/php/session/*
+  252  ls
+  253  cd /usr/local/nginx/html/
+  254  ls
+  255  vi index.php
+  256  vi /usr/local/nginx/html/index.php 
+  257  cat /usr/local/nginx/html/index.php
+  258  cd ~
+  259  ls
+  260  cat isync.sh 
+  261  ls /var/lib/php/session/
+  262  eixt
+  263  exit
+  264  nmcli connection add type ethernet con-name eth3 ifname eth3
+  265  nmcli connection modify "eth3" ipv4.method manual ipv4.addresses "201.1.2.100/24" connection.autoconnect yes
+  266  nmcli connection up "eth3"
+  267  sr10
+  268  yum repolist
+  269  ifconfig
+  270  yum -y install java
+  271  yum -y install java-1.8.0-openjdk-headless
+  272  java -version
+  273  ls
+  274  cd lnmp_soft/
+  275  ls
+  276  tar -xf apache-tomcat-8.0.30.tar.gz 
+  277  mv apache-tomcat-8.0.30 /usr/local/tomcat
+  278  ls /usr/local/tomcat
+  279  /usr/local/tomcat/bin/startup.sh 
+  280  setenforce 0
+  281  netstat -nutlp | grep java
+  282  firefox http://201.1.2.100
+  283  firefox http://201.1.2.100:8080
+  284  vim /usr/local/tomcat/webapps/ROOT/test.jsp
+  285  /usr/local/tomcat/bin/shutdown.sh 
+  286  /usr/local/tomcat/bin/startup.sh 
+  287  netstat -nutlp | grep java
+  288  vim /usr/local/tomcat/conf/server.xml
+  289  mkdir -p /usr/local/tomcat/{a,b}/ROOT
+  290  echo "AAA" > /usr/local/tomcat/a/ROOT/index.html
+  291  echo "BBB" > /usr/local/tomcat/b/ROOT/index.html
+  292  /usr/local/tomcat/bin/shutdown.sh
+  293  /usr/local/tomcat/bin/startup.sh
+  294  ifconfig 
+  295  /usr/local/tomcat/bin/startup.sh
+  296  echo "AAA"   > /usr/local/tomcat/a/ROOT/index.html
+  297  echo "BBB" > /usr/local/tomcat/b/ROOT/index.html
+  298  /usr/local/tomcat/bin/shutdown.sh
+  299  /usr/local/tomcat/bin/startup.sh
+  300  netstat -nutlp |grep java
+  301  firefox http://www.a.com:8080/
+  302  firefox http://www.a.com:8080/tes
+  303  firefox http://www.a.com:8080/test
+  304  echo "Test" > /var/www/html/index.html 
+  305  vim /usr/local/tomcat/conf/server.xml
+  306  /usr/local/tomcat/bin/shutdown.sh
+  307  /usr/local/tomcat/bin/startup.sh
+  308  vim /usr/local/tomcat/conf/server.xml
+  309  keytool -genkeypair -alias tomcat -keyalg RSA -keystore /usr/local/tomcat/keystore
+  310  vim /usr/local/tomcat/conf/server.xml
+  311   /usr/local/tomcat/bin/shutdown.sh
+  312  /usr/local/tomcat/bin/startup.sh
+  313  netstat -nutlp |grep java
+  314  /usr/local/tomcat/bin/startup.sh
+  315  ls /usr/local/
+  316  ls /usr/local/tomcat/
+  317  ifconfig
+  318  vim /usr/local/tomcat/conf/server.xml
+  319   /usr/local/tomcat/bin/shutdown.sh
+  320  /usr/local/tomcat/bin/startup.sh
+  321  vim /usr/local/tomcat/conf/server.xml
+  322   /usr/local/tomcat/bin/shutdown.sh
+  323  /usr/local/tomcat/bin/startup.sh
+  324  vim /usr/local/tomcat/conf/server.xml
+  325  ls /usr/local/tomcat/
+  326  ls /usr/local/tomcat/logs/
+  327  cat /usr/local/tomcat/logs/a_log.2018-05-31.txt 
+  328  history > /root/tomcat.txt
+
+
+    1  systemctl set-default multi-user.target 
+    2  systemctl stop firewalld.service 
+    3  systemctl disable firewalld.service 
+    4  vim /etc/selinux/config 
+    5  grubby --update-kernel=ALL --args="console=ttyS0"
+    6  reboot 
+    7  ls /etc/yum.repos.d/
+    8  vim /etc/yum.repos.d/rhel7.repo
+    9  yum repolist
+   10  vim /etc/yum.repos.d/rhel7.repo
+   11  ifconfig
+   12  nmcli connection add type ethernet con-name eth3 ifname eth3
+   13  nmcli connection modify "eth3" ipv4.method manual ipv4.addresses "201.1.2.5/24" connection.autoconnect yes
+   14  nmcli connection up "eth3"
+   15  ifconfig
+   16  yum repolist
+   17  hostnamectl set-hostname sr8
+   18  exit
+   19  firefox http://201.1.1.100
+   20  ifconfig | head -20
+   21  ls
+   22  yum -y install gcc pcre-devel openssl-devel
+   23  useradd -s /sbin/nologin nginx
+   24   tar  -xf nginx-1.12.2.tar.gz 
+   25   cd  nginx-1.12.2
+   26  ./configure --prefix=/usr/local/nginx  --user=nginx   --group=nginx   --with-http_ssl_module
+   27  make && make install
+   28  /usr/local/nginx/sbin/nginx 
+   29  /usr/local/nginx/sbin/nginx -V
+   30  ln -s /usr/local/nginx/sbin/nginx /sbin/ 
+   31  vim /usr/local/nginx/conf/nginx.conf
+   32  nginx -s reload
+   33  ifconfig 
+   34  vim /usr/local/nginx/conf/nginx.conf
+   35  nginx -s reload
+   36  ifconfig
+   37  vim /usr/local/nginx/conf/nginx.conf
+   38  nginx -s reload
+   39  vim /usr/local/nginx/conf/nginx.conf
+   40  nginx -s reload
+   41  curl http://201.1.2.100
+   42  curl http://201.1.2.100/test2.php
+   43  vim /usr/local/nginx/conf/nginx.conf
+   44  firefox http://201.1.2.100
+   45  firefox http://201.1.2.100/test1.php
+   46  firefox http://201.1.2.100
+   47  vim /usr/local/nginx/conf/nginx.conf
+   48  curl http://201.1.2.100
+   49  curl http://201.1.2.100/index.html
+   50  vim /usr/local/nginx/conf/nginx.conf
+   51  nginx -s reload
+   52  curl http://201.1.2.100
+   53  vim /usr/local/nginx/conf/nginx.conf
+   54  curl http://201.1.2.100
+   55  vim /usr/local/nginx/conf/nginx.conf
+   56  cat /usr/local/nginx/conf/nginx.conf
+   57  cd ~
+   58  cat /usr/local/nginx/conf/nginx.conf
+   59  vim /usr/local/nginx/conf/nginx.conf
+   60  nginx -s reload
+   61  vim /usr/local/nginx/conf/nginx.conf
+   62  nginx -s reload
+   63  vim /usr/local/nginx/conf/nginx.conf
+   64  nginx -s reload
+   65  vim /usr/local/nginx/conf/nginx.conf
+   66  netstat  -anptu  |  grep nginx
+   67  lscpu
+   68  vim /usr/local/nginx/conf/nginx.conf
+   69  nginx -s reload
+   70  vim /usr/local/nginx/conf/nginx.conf
+   71  nginx -s reload
+   72  vim /usr/local/nginx/conf/nginx.conf
+   73  nginx -s reload
+   74  vim /usr/local/nginx/conf/nginx.conf
+   75  nginx -s reload
+   76  vim /usr/local/nginx/conf/nginx.conf
+   77  nginx -s reload
+   78  watch -n 1 ss -s
+   79   ulimit -a
+   80   ulimit -Hn 100000 
+   81  ulimit -Sn 100000
+   82  vim /etc/security/limits.conf
+   83  nginx -s reload
+   84  ab -n 1000 -c 1000  http://201.1.1.5/
+   85  watch -n 1 ss -s
+   86  history
+   87  vim /usr/local/nginx/conf/nginx.conf
+   88  ifconfig | head -20
+   89  firefox http://201.1.1.5/mysql
+   90  firefox http://201.1.2.100/mysql
+   91  nginx -s reload
+   92  firefox http://201.1.2.100/mysql
+   93  firefox http://201.1.2.100/
+   94  firefox http://201.1.2.100/mysql.php
+   95  firefox http://201.1.2.100/test.php
+   96  firefox http://201.1.2.100/mem.php
+   97  cd /var/lib/php/session/ 
+   98  cd /var/lib/php/session/
+   99  yum -y install memcached
+  100  systemctl restart memcached
+  101  netstat  -anptu  |  grep memcached
+  102   setenforce 0
+  103  firewall-cmd --set-default-zone=trusted
+  104  ifconfig
+  105  ls /var/lib/php/session/
+  106  telnet 127.0.0.1 11211
+  107  yum -y install telnet
+  108  telnet 127.0.0.1 11211
+  109  ls
+  110  telnet 127.0.0.1 11211
+  111  echo $/proc/sys/net/core/wmem_max
+  112  ls /proc/sys/net/core/wmem_max
+  113  cat /proc/sys/net/core/wmem_max
+  114  cat /etc/sysctl.conf 
+  115  ls /etc/sysctl.d/
+  116  cat /etc/sysctl.d/99-sysctl.conf 
+  117  cat /etc/sysctl.conf
+  118  vi /etc/sysctl.conf
+  119  sysctl -p
+  120  exit
+  121  nmcli connection add type ethernet con-name eth2 ifname eth2
+  122  nmcli connection modify "eth2" ipv4.method manual ipv4.addresses 
+  123  nmcli connection modify "eth2" ipv4.method manual ipv4.addresses "201.1.1.5/24"  connection.autoconnect yes
+  124  nmcli connection up "eth2"
+  125  ifconfig 
+  126  yum repolist
+  127  ifconfig 
+  128  firefox http://201.1.2.100:8080
+  129  firefox http://201.1.2.100:8080/test.jsp
+  130  vim /etc/hosts
+  131  firefox http://www.a.com:8080/
+  132  firefox http://www.a.com:8080
+  133  firefox http://www.a.com:8080/
+  134  firefox http://201.1.2.100:8080/test.jsp
+  135  firefox http://201.1.2.100:8080/test
+  136  firefox http://www.a.com:8080/test
+  137  curl http://www.a.com:8080/test
+  138  curl http://www.a.com:8080/test/
+  139  firefox http://www.a.com:8080/test
+  140  firefox http://201.1.2.100:8443/
+  141  firefox http://201.1.2.100
+  142  firefox http://201.1.2.100:8443
+  143  firefox https://201.1.2.100:8443
+  144  firefox http://www.a.com:8080/test
+  145  firefox http://www.a.com:8080/test/
+  146  firefox https://www.a.com:8443/test/
+  147  firefox http://www.a.com:8080/test/
+  148  vim /usr/local/nginx/conf/nginx.conf
+  149  nginx 
+  150  ss -nulpt | grep 80
+  151  ifconfig | grep head -20
+  152  ifconfig |  head -20
+  153  curl http://201.1.2.200
+  154  curl http://201.1.2.200:8080
+  155  yum -y install gcc readline-devel
+  156  yum -y install ncurses-devel
+  157  yum -y install pcre-devel
+  158  ls
+  159  tar lnmp_soft.tar.gz 
+  160  tar -xf lnmp_soft.tar.gz 
+  161  cd lnmp_soft/
+  162  ls
+  163  yum -y install python-docutils-0.11-0.2.20130715svn7687.el7.noarch.rpm 
+  164  useradd -s /sbin/nologin varnish
+  165  tar -xf varnish-5.2.1.tar.gz 
+  166  cd varnish-5.2.1/
+  167  ./configure 
+  168  cp etc/example.vcl /usr/local/default.vcl
+  169  vim /usr/local/default.vcl
+  170  varnishd  -f /usr/local/etc/default.vcl
+  171  varnishd -f /usr/local/etc/default.vcl
+  172  ./configure
+  173  make && make install
+  174  vim  /usr/local/etc/default.vcl
+  175  cp  etc/example.vcl   /usr/local/etc/default.vcl
+  176  vim  /usr/local/etc/default.vcl
+  177  varnishd  -f /usr/local/etc/default.vcl
+  178  ss -nultp | grep 80
+  179  nginx -s stop
+  180  ss -nultp | grep 80
+  181  varnishd  -f /usr/local/etc/default.vcl
+  182  nginx
+  183  firefox http://201.1.2.100
+  184  ls /var/
+  185  ls /var/local/
+  186  ls /var/lib
+  187  nginx
+  188  netstat  -anptu  |  grep httpd
+  189  cd ~
+  190  ls
+  191  ls /var/
+  192  ls /var/lib
+  193  ifconfig
+  194  curl http://201.1.2.100
+  195   vim  /usr/local/etc/default.vcl
+  196  varnishd  -f /usr/local/etc/default.vcl
+  197  kill 23972
+  198  varnishd  -f /usr/local/etc/default.vcl
+  199  varnishlog
+  200  kill 24956
+  201  varnishlog
+  202  varnishd  -f /usr/local/etc/default.vcl
+  203  kill -9 24946
+  204  varnishd  -f /usr/local/etc/default.vcl
+  205  kill -9 25488
+  206  varnishd  -f /usr/local/etc/default.vcl
+  207  kill 25478
+  208  varnishd  -f /usr/local/etc/default.vcl
+  209  varnishlog
+  210  ls
+  211  ls /usr
+  212  cd /usr/
+  213  ls
+  214  cd local/
+  215  ls
+  216  cd etc
+  217  ls
+  218  rm -rf *
+  219  ls
+  220  firefox http://201.1.2.100
+  221  ss -nultp | grep http
+  222  systemctl start httpd
+  223  yum  -y  install  httpd
+  224  yum -y install gcc readline-devel  
+  225  yum -y install ncurses-devel  
+  226  yum -y install pcre-devel 
+  227  yum -y install python-docutils-0.11-0.2.20130715svn7687.el7.noarch.rpm 
+  228  cd ~
+  229  ls
+  230  cd lnmp_soft/
+  231  ls
+  232  yum -y install python-docutils-0.11-0.2.20130715svn7687.el7.noarch.rpm 
+  233  useradd -s /sbin/nologin varnish   
+  234  tar -xf varnish-5.2.1.tar.gz
+  235  cd varnish-5.2.1
+  236  ./configure
+  237   make && make install
+  238  cp  etc/example.vcl   /usr/local/etc/default.vcl
+  239  vim  /usr/local/etc/default.vcl
+  240  varnishd  -f /usr/local/etc/default.vcl
+  241  kill 25959
+  242  varnishd  -f /usr/local/etc/default.vcl
+  243  kill all varnishd
+  244  ss -untlp | grep varnishd
+  245  kill 30949
+  246  ss -untlp | grep varnishd
+  247  varnishlog
+  248  varnishd  -f /usr/local/etc/default.vcl
+  249  varnishncsa
+  250  ss -untlp | grep varnishd
+  251  kill all varnishd
+  252  kill all varnish
+  253  killall varnishd
+  254  ss -untlp | grep varnishd
+  255  varnishd  -f /usr/local/etc/default.vcl
+  256  varnishlog
+  257  varnishd  -f /usr/local/etc/default.vcl
+  258  killall varnishd
+  259  varnishd  -f /usr/local/etc/default.vcl
+  260  varnishlog
+  261  varnishadm
+  262  history
+
+
+
+
