@@ -1,0 +1,699 @@
+    1  systemctl set-default multi-user.target 
+    2  systemctl stop firewalld.service 
+    3  systemctl disable firewalld.service 
+    4  vim /etc/selinux/config 
+    5  grubby --update-kernel=ALL --args="console=ttyS0"
+    6  reboot 
+    7  nmcli connection add type ethernet con-name eth1 ifname eth1
+    8  nmcli connection modify "eth1" ipv4.method manual ipv4.addresses "192.168.2.100/24" connection.autoconnect yes
+    9  nmcli connection up "eth1"
+   10  ifconfig | head -3
+   11  ifconfig 
+   12  echo "web1" > /etc/hostname
+   13  reboot
+   14  vi /etc/yum.repos.d/rhel7.repo
+   15  yum repolist
+   16  ifconfig 
+   17  vi /etc/yum.repos.d/rhel7.repo
+   18  yum repolist
+   19  cat /etc/yum.repos.d/rhel7.repo
+   20  hostname
+   21  ifconfig 
+   22  ifconfig | head -10
+   23  vi /etc/bashrc
+   24  . /etc/bashrc
+   25  ip
+   26  exit
+   27  ls
+   28  cd lnmp_soft/
+   29  ls
+   30  java -version
+   31  tar -xf apache-tomcat-8.0.30.tar.gz 
+   32  mv apache-tomcat-8.0.30 /usr/local/tomcat
+   33  ls /usr/local/tomcat
+   34  /usr/local/tomcat/bin/startup.sh 
+   35  ss -ntulp | grep java
+   36  ifconfig
+   37  firefox http://192.168.2.100:8080
+   38  ls /usr/local/tomcat
+   39  ls /usr/local/tomcat/webapps/
+   40  ls /usr/local/tomcat
+   41  ls /usr/local/tomcat/work/
+   42  ls /usr/local/tomcat/work/Catalina/
+   43  ls /usr/local/tomcat/work/Catalina/localhost/
+   44  ls /usr/local/tomcat/work/Catalina/localhost/examples/
+   45  ls
+   46  ls /usr/local/tomcat/work/Catalina/localhost/examples/
+   47  ls /usr/local/tomcat/work/Catalina/localhost/
+   48  ls /usr/local/tomcat/work/Catalina/localhost/ROOT/
+   49  ls /usr/local/tomcat/work/Catalina/localhost/ROOT/org/
+   50  ls /usr/local/tomcat/work/Catalina/localhost/ROOT/org/apache/
+   51  ls /usr/local/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/
+   52  cat /usr/local/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/index_jsp.java 
+   53  vim /usr/local/tomcat/webapps/ROOT/test.jsp
+   54  firefox http://192.168.2.100:8080/test.jsp
+   55   cat /usr/local/tomcat/conf/server.xml
+   56  vim /usr/local/tomcat/conf/server.xml 
+   57  mkdir -p /usr/local/tomcat/{a,b}/ROOT
+   58  echo "AAA" > /usr/local/tomcat/a/ROOT/index.html
+   59  echo "BBB" > /usr/local/tomcat/b/ROOT/index.html
+   60  ifconfig
+   61  /usr/local/tomcat/bin/shutdown.sh 
+   62  /usr/local/tomcat/bin/startup.sh 
+   63  ls /usr/local/tomcat/
+   64  ls /usr/local/tomcat/b
+   65  mkdir /usr/local/tomcat/b/base
+   66  echo "BASE" > 
+   67  echo "BASE" > /usr/local/tomcat/b/base/index.html
+   68  vim /usr/local/tomcat/conf/server.xml 
+   69  /usr/local/tomcat/bin/shutdown.sh 
+   70  /usr/local/tomcat/bin/startup.sh 
+   71  vim /usr/local/tomcat/conf/server.xml 
+   72  echo "Test" > /var/www/html/index.html
+   73  /usr/local/tomcat/bin/shutdown.sh
+   74  /usr/local/tomcat/bin/startup.sh 
+   75  vim /usr/local/tomcat/conf/server.xml 
+   76  ls /usr/local/tomcat/a/ROOT/
+   77  ls /usr/local/tomcat/b/ROOT/
+   78  cat /usr/local/tomcat/a/ROOT/index.html 
+   79  ss -ntulp | grep java
+   80  vi /usr/local/tomcat/bin/startup.sh 
+   81  vim /usr/local/tomcat/conf/server.xml 
+   82  ls /usr/local/tomcat/
+   83  ls /usr/local/tomcat/b
+   84  ls /usr/local/tomcat/b/base/
+   85  vim /usr/local/tomcat/conf/server.xml 
+   86  ls /usr/local/tomcat/s
+   87  ls /usr/local/tomcat/a
+   88  ls /usr/local/tomcat/a/ROOT/
+   89  vim /usr/local/tomcat/conf/server.xml 
+   90  /usr/local/tomcat/bin/shutdown.sh
+   91  vi /usr/local/tomcat/bin/startup.sh 
+   92   /usr/local/tomcat/bin/startup.sh 
+   93  vim /usr/local/tomcat/conf/server.xml 
+   94  /usr/local/tomcat/bin/shutdown.sh
+   95   /usr/local/tomcat/bin/startup.sh 
+   96  vim /usr/local/tomcat/conf/server.xml 
+   97  keytool -genkeypair -alias tomcat -keyalg RSA -keystore /usr/local/tomcat/keystore
+   98  cat /usr/local/tomcat/keystore
+   99  vim /usr/local/tomcat/conf/server.xml 
+  100  ls 
+  101  ls /usr/local/tomcat/
+  102  vim /usr/local/tomcat/conf/server.xml 
+  103  /usr/local/tomcat/bin/shutdown.sh
+  104   /usr/local/tomcat/bin/startup.sh 
+  105  /usr/local/tomcat/bin/shutdown.sh
+  106  /usr/local/tomcat/bin/startup.sh 
+  107  vim /usr/local/tomcat/conf/server.xml 
+  108  ls /usr/local/tomcat/
+  109  /usr/local/tomcat/bin/shutdown.sh
+  110  /usr/local/tomcat/bin/startup.sh
+  111  vim /usr/local/tomcat/conf/server.xml 
+  112  ls /usr/local/tomcat/
+  113  cd /usr/local/tomcat/
+  114  ls
+  115  cd /usr/local/tomcat/logs/
+  116  ls
+  117  vim /usr/local/tomcat/conf/server.xml
+  118  /usr/local/tomcat/bin/startup.sh
+  119  /usr/local/tomcat/bin/shutdown.sh 
+  120  /usr/local/tomcat/bin/startup.sh
+  121  cd /usr/local/tomcat/logs/
+  122  ls
+  123  cat a_log.2018-05-31.txt 
+  124  cd ~
+  125  history
+  126  vim /usr/local/tomcat/conf/server.xml
+  127  /usr/local/tomcat/bin/shutdown.sh 
+  128  /usr/local/tomcat/bin/startup.sh
+  129  vim /usr/local/tomcat/conf/server.xml
+  130  /usr/local/tomcat/bin/shutdown.sh 
+  131  /usr/local/tomcat/bin/startup.sh
+  132  /usr/local/tomcat/bin/shutdown.sh 
+  133  /usr/local/tomcat/bin/startup.sh
+  134  /usr/local/tomcat/bin/shutdown.sh 
+  135  /usr/local/tomcat/bin/startup.sh
+  136  vim /usr/local/tomcat/conf/server.xml
+  137  nginx -s stop
+  138  ss -ntulp | grep 80
+  139  yum -y install httpd
+  140  systemctl start httpd
+  141  setenforce 0
+  142  ifconfig
+  143  echo "eee" > /var/www/html/index.html
+  144  echo "eee1" > /var/www/html/index.html
+  145  exit
+  146  yum -y install rpm-build
+  147  rpmbuild -ba nginx.spec
+  148  ls /root/rpmbuild/
+  149  ls
+  150  cp nginx-1.12.2.tar.gz /root/rpmbuild/SOURCES/
+  151  vim /root/rpmbuild/SPECS/nginx.spec
+  152  yum -y install gcc pcre-devel zlib-devel openssl-devel
+  153  rpmbuild -ba /root/rpmbuild/SPECS/nginx.spec
+  154  ls /root/rpmbuild/SOURCES/
+  155  vim /root/rpmbuild/SPECS/nginx.spec
+  156  rpmbuild -ba /root/rpmbuild/SPECS/nginx.spec
+  157  vim /root/rpmbuild/SPECS/nginx.spec
+  158  ls /root/rpmbuild/SPECS/
+  159   yum -y install  rpm-build
+  160   rpmbuild -ba nginx.spec 
+  161   ls /root/rpmbuild    
+  162   cp nginx-1.12.2.tar.gz /root/rpmbuild/SOURCES/
+  163  vim /root/rpmbuild/SPECS/nginx.spec 
+  164   rpmbuild -ba nginx.spec 
+  165  rpmbuild -ba /root/rpmbuild/SPECS/nginx.spec
+  166  la /usr
+  167  ls /usr
+  168  ls
+  169  ls rpmbuild/
+  170  ls rpmbuild/RPMS/
+  171  ls rpmbuild/RPMS/x86_64/
+  172  ls rpmbuild/RPMS/x86_64/nginx-1.12.2-10.x86_64.rpm 
+  173  rpm -ivh rpmbuild/RPMS/x86_64/nginx-1.12.2-10.x86_64.rpm 
+  174  rpm -qa | grep nginx
+  175  /usr/local/nginx/sbin/nginx 
+  176  curl http://127.0.0.1/
+  177  yum -y install cp /root/rpmbuild/RPMS/x86_64/nginx-1.12.2-10.x86_64.rpm 
+  178  yum -y install  /root/rpmbuild/RPMS/x86_64/nginx-1.12.2-10.x86_64.rpm 
+  179  ls /usr/
+  180  ls /usr/local/
+  181  rm -rf /usr/local/nginx/
+  182  ls /usr/local/
+  183  yum -y install  /root/rpmbuild/RPMS/x86_64/nginx-1.12.2-10.x86_64.rpm 
+  184  ls /usr/local/
+  185  yumdownloader  /root/rpmbuild/RPMS/x86_64/nginx-1.12.2-10.x86_64.rpm 
+  186  ls /usr/local/
+  187  rpm -ivh rpmbuild/RPMS/x86_64/nginx-1.12.2-10.x86_64.rpm 
+  188  ls /usr/local/
+  189  ls /root/rpmbuild/
+  190  ls /root/rpmbuild/RPMS/
+  191  rpm -ivh RPMS/x86_64/nginx-1.12.2-10.x86_64.rpm
+  192   yum -y install  gcc  pcre-devel zlib-devel openssl-devel
+  193   rpmbuild -ba /root/rpmbuild/SPECS/nginx.spec
+  194   ls /root/rpmbuild/RPMS/x86_64/nginx-1.12.2-10.x86_64.rpm
+  195   rpm -qpi RPMS/x86_64/nginx-1.12.2-10.x86_64.rpm 
+  196  rpmbuild -ba /root/rpmbuild/SPECS/nginx.spec
+  197  rpm -ivh /root/rpmbuild/RPMS/x86_64/nginx-1.12.2-10.x86_64.rpm
+  198  ls /usr/
+  199  ls /usr/local
+  200  ls /usr/local/
+  201  ls /usr/local/sbin/
+  202  rpm -qa |grep nginx
+  203  /usr/local/nginx/sbin/nginx
+  204  ls
+  205  rm -rf nginx-1.12.2
+  206  ls
+  207  /usr/local/nginx/sbin/nginx
+  208  rpm -ivh /root/rpmbuild/RPMS/x86_64/nginx-1.12.2-10.x86_64.rpm
+  209  ls
+  210  ls rpmbuild/
+  211  ls
+  212  curl http://127.0.0.1/
+  213  rm -rf rpmbuild/
+  214  ls
+  215  yum -y install  rpm-build
+  216  rpmbuild -ba nginx.spec 
+  217  ls /root/rpmbuild  
+  218   cp nginx-1.12.2.tar.gz /root/rpmbuild/SOURCES/
+  219  vim /root/rpmbuild/SPECS/nginx.spec 
+  220  yum -y install  gcc  pcre-devel zlib-devel openssl-devel
+  221  rpmbuild -ba /root/rpmbuild/SPECS/nginx.spec
+  222  ls /root/rpmbuild/RPMS/x86_64/nginx-1.12.2-10.x86_64.rpm
+  223  rpm -qpi /root/rpmbuild/RPMS/x86_64/nginx-1.12.2-10.x86_64.rpm
+  224  rpm -qpl nginx-1.12.2-10.x86_64.rpm 
+  225  rpm -qpl /root/rpmbuild/RPMS/x86_64/nginx-1.12.2-10.x86_64.rpm
+  226  ls /usr/local/
+  227  rpm -ivh /root/rpmbuild/RPMS/x86_64/nginx-1.12.2-10.x86_64.rpm
+  228  ls /usr/local/
+  229   rpm -qa |grep nginx
+  230  ls /usr/local/sbin/
+  231  /usr/local/nginx/sbin/nginx
+  232  curl http://127.0.0.1/
+  233  yum -y install nginx
+  234  ls
+  235  tar nginx-1.12.2.tar.gz 
+  236  tar -xf nginx-1.12.2.tar.gz 
+  237  ls
+  238  yum -y install nginx
+  239  yum -y install nginx-1.12.2
+  240  /usr/local/nginx/sbin/nginx
+  241  yum -y install gcc pcre-devel openssl-devel
+  242  useradd -s /sbin/nologin nginx
+  243  cd nginx-1.12.2/
+  244  ./configure   --prefix=/usr/local/nginx    --user=nginx   \   
+  245  ./configure   --prefix=/usr/local/nginx    --user=nginx   --group=nginx  --with-http_ssl_module
+  246  cd ~
+  247  ls /usr/local/
+  248  ls /usr/local/sbin/
+  249  make && make install
+  250  cd nginx-1.12.2/
+  251  make && make install
+  252  ls /usr/local/sbin/
+  253  /usr/local/nginx/sbin/nginx   
+  254  ls /usr/local/nginx/sbin/nginx   
+  255  ls /usr/local/nginx/sbin/
+  256  ss -nulpt | grep nginx
+  257  kill 4214
+  258  ss -nulpt | grep nginx
+  259  cd ~
+  260  ls 
+  261  ls /usr
+  262  ls /usr/local/
+  263  ls /usr/local/sbin/
+  264  ls /usr/local/
+  265  ls /usr/local/nginx/
+  266  vim /root/rpmbuild/SPECS/nginx.spec 
+  267  ls /root/rpmbuild/
+  268  ls /root/rpmbuild/RPMS/
+  269  ls /usr/local/nginx/
+  270  rm -rf  /usr/local/nginx/
+  271  ls /usr/local/nginx/
+  272  ls /usr/local/
+  273  ls /root/rpmbuild/
+  274  ls /root/rpmbuild/RPMS/
+  275  rpm -ivh  /root/rpmbuild/RPMS/x86_64/nginx-1.12.2-10.x86_64.rpm 
+  276  ls /usr/local/
+  277  ls /usr/local/sbin/
+  278* 
+  279  curl http://127.0.0.1/
+  280  ls /usr/local/nginx/sbin/nginx
+  281  ls
+  282  cd nginx-1.12.2/
+  283  make && make install
+  284  ls /usr/local/nginx/
+  285  rpm -qa |grep nginx
+  286  cd ~
+  287  ls 
+  288  ls rpmbuild/
+  289  ls rpmbuild/RPMS/
+  290  scp  rpmbuild/RPMS/x86_64/nginx-1.12.2-10.x86_64.rpm  root@192.168.2.200:/root
+  291  yum -y install subversion
+  292  rpm -q subversion
+  293  ls /var/svn
+  294  svnadmin create /var/svn/project2
+  295  ls /var/svn/project2
+  296  ls
+  297  svn import . file:///var/svn/project2/ -m "web1"
+  298  vim /var/svn/project2/conf/svnserve.conf 
+  299  vim /var/svn/project2/conf/passwd 
+  300  vim /var/svn/project2/conf/authz 
+  301  svnserve -d -r /var/svn/project2
+  302  ss -nutlp | grep svnserve
+  303  cd /tmp
+  304  ls
+  305  cd ..
+  306  cd ~
+  307  ls
+  308  mkdir test
+  309  cd test/
+  310  ls
+  311  svn --username harry --password harry co svn://192.168.2.100/ code1
+  312  cd code1/
+  313  ls
+  314  rm -rf nginx-1.12.2
+  315  svn ci -m "rm -rf nginx-1.12.2"
+  316  svn update
+  317  svn info svn://192.168.2.100
+  318  svn log svn://192.168.2.100
+  319  ls
+  320  svn update
+  321  ls
+  322  svn update
+  323  ls
+  324  svn diff
+  325  svn log svn://192.168.2.100
+  326  svn update
+  327  ls
+  328  svn update
+  329  ls
+  330  svn rm test.sh
+  331  svn ci -m "s"
+  332  pwd
+  333  cd /var
+  334  ls
+  335  cd svn
+  336  ls
+  337  cat project.bak 
+  338  mv project.bak  pr
+  339  ls
+  340  cd pr
+  341  cat pr
+  342  svnadmin load /var/svn/pr < pr.bak
+  343  ls
+  344  mv pr project.bak
+  345  ls
+  346  ls project2
+  347  rm -rf project2/*
+  348  ls project2
+  349  svnadmin load /var/svn/project2 < project.bak 
+  350  ls
+  351  svnadmin load /var/svn/project2 < project.bak
+  352  svnadmin dump /var/svn/project > project.bak
+  353  svnadmin load /var/svn/project2 < project.bak
+  354  svnadmin load /var/svn/project1 < project.bak
+  355  ls project1
+  356  rm -rf project
+  357  ls
+  358  rm -rf project1
+  359  rm -rf project2
+  360  svnadmin load /var/svn/project1 < project.bak
+  361  svnadmin load /var/svn/project  < project.bak
+  362  svnadmin load /var/svn/project2 < project.bak
+  363  svn --username harry --password harry co svn://192.168.2.100/ code1
+  364  ls
+  365  touch project
+  366  ls
+  367  svnadmin load /var/svn/project  < project.bak
+  368  mkdir project2
+  369  ls
+  370  svnadmin load /var/svn/project2  < project.bak
+  371  cd ~
+  372  ls
+  373  yum -y install subversion
+  374  rpm -q subversion
+  375  ls /var/svn
+  376  rm -rf /var/svn/*
+  377  ls /var/svn
+  378  svnadmin create /var/svn/project
+  379  ls /var/svn/project
+  380  cd /usr/lib/systemd/system/
+  381  svn import . file:///var/svn/project/ -m "Init Data"
+  382  vim /var/svn/project/conf/svnserve.conf 
+  383  vim /var/svn/project/conf/passwd 
+  384  cat /var/svn/project/conf/passwd
+  385  vim /var/svn/project/conf/authz 
+  386  svnserve -d -r /var/svn/project/
+  387  netstat -nutlp |grep svnserve
+  388  cd /tmp
+  389  cd ~
+  390  kill 3690
+  391  netstat -nutlp |grep svnserve
+  392  killall svnserve
+  393  netstat -nutlp |grep svnserve
+  394  svnserve -d -r /var/svn/project/
+  395  netstat -nutlp |grep svnserve
+  396  ls
+  397  cd /usr/lib/systemd/system/
+  398  ls
+  399  cat user.slice 
+  400  svn update 
+  401  cat user.slice 
+  402  ls /var/svn/
+  403  cd /var/svn/
+  404  cd project/
+  405  ls
+  406  cd /tmp
+  407  ls
+  408  svn --username harry --password harry co svn://192.168.2.100/project code
+  409  ls /var/svn
+  410  ls /var/svn/project/
+  411  svn --username harry --password harry co svn://192.168.2.100/project code
+  412  svnadmin create /var/svn/project
+  413  svn --username harry --password harry co svn://192.168.2.100/project code
+  414  ss -unlpt | grep svn
+  415  cd ~
+  416  ls /usr
+  417  ls /var
+  418  ls /var/svn/
+  419  cd /var/svn/
+  420  cd project/
+  421  svn --username harry --password harry co svn://192.168.2.100/project code
+  422  ls
+  423  cd ..
+  424  ls
+  425  svnadmin create /var/svn/pr
+  426  ls
+  427  cd /test
+  428  cd ~
+  429  mkdir test
+  430  cd test
+  431  svn --username tom --password tom co svn://192.168.2.100/project code
+  432  ls
+  433  cd code1
+  434  ls
+  435  ss -untlp | grep svn
+  436  kill 3690
+  437  killall svn
+  438  ss -untlp | grep svn
+  439  kill 15797
+  440  ss -untlp | grep svn
+  441  cd ~
+  442  yum repolist
+  443  rpm -q subversion
+  444  svnadmin create /var/svn/project1
+  445  ls /var/svn/project1
+  446  cd /usr/lib/systemd/system/
+  447  svn import . file:///var/svn/project1/ -m "testInitData"
+  448  vim /var/svn/project1/conf/svnserve.conf 
+  449  vi /var/svn/project1/conf/authz 
+  450  svnserve -d -r /var/svn/project1
+  451  ss -nutlp | grep svn
+  452  vim /var/svn/project1/conf/passwd 
+  453  ss -nutlp | grep svn
+  454  kill 16532
+  455  ss -nutlp | grep svn
+  456  svnserve -d -r /var/svn/project1
+  457  svn import . file:///var/svn/project1/ -m "test"
+  458  svn import . file:///var/svn/project/ -m "Init Data"
+  459  netstat -nutlp |grep svnserve
+  460  ss -nutlp | grep svn
+  461  kill 16581
+  462  ss -nutlp | grep svn
+  463  svn import . file:///var/svn/project/ -m "Init Data"
+  464  svnserve -d -r /var/svn/project1
+  465  ss -nutlp | grep svn
+  466  vim /var/svn/project1/conf/passwd 
+  467  ss -nutlp | grep svn
+  468  kill 16628
+  469  svnserve -d -r /var/svn/project1
+  470  vim /var/svn/project1/conf/passwd 
+  471  ls
+  472  cd ~
+  473  ls
+  474  ls test
+  475  rm -rf test/*
+  476  ls test
+  477  cd test
+  478  svn -username tom --password tom co svn://192.168.2.100/projiect1 code
+  479  svn -username tom --password tom co svn://192.168.2.100/project1 code
+  480  svn -username tom --password tom co svn://192.168.2.100/project1 code1
+  481  svn --username harry --password harry co svn://192.168.2.100/ code
+  482  ls
+  483  sed -i "3a ###harry modify#####"  tmp.mount
+  484  cd code
+  485  sed -i "3a ###harry modify#####"  tmp.mount
+  486  svn ci -m "has modefied"
+  487  svn update
+  488  svn --username tom --password tom co svn://192.168.2.100/ code
+  489  svn --username harry --password harry co svn://192.168.2.100/ code
+  490  sed -i "6a ###tom  modify#####"  user.slice
+  491  svn ci -m "alsdfj"
+  492  svn update
+  493  svn ci -m "sldkfj"
+  494  sed -i '1c [UNIT]' tuned.service 
+  495  svn ci -m "tesdf"
+  496  svnadmin dump /var/svn/project1 > project1.bak
+  497  cd ..
+  498  ls
+  499  cd ..
+  500  cd /var/svn/
+  501  ls
+  502  cd project1
+  503  ls
+  504  cd ~
+  505  ls
+  506  svnadmin dump /var/svn/project1 > project1.bak
+  507  ls
+  508  svnadmin load /var/svn/project2 < project1.bak 
+  509  mkdir /var/svn/project2
+  510  svnadmin load /var/svn/project2 < project1.bak 
+  511  svnadmin create /var/svn/project2 
+  512  svnadmin load /var/svn/project2 < project1.bak 
+  513  ls /var/svn/project2 
+  514  cat /var/svn/project2/conf/passwd
+
+
+    1  systemctl set-default multi-user.target 
+    2  systemctl stop firewalld.service 
+    3  systemctl disable firewalld.service 
+    4  vim /etc/selinux/config 
+    5  grubby --update-kernel=ALL --args="console=ttyS0"
+    6  reboot 
+    7  nmcli connection add type ethernet con-name eth1 ifname eth1
+    8  nmcli connection modify "eth1" ipv4.method manual ipv4.addresses "192.168.2.200/24" connection.autoconnect yes
+    9  nmcli connection up "eth1"
+   10  echo "web2" > /etc/hostname
+   11  reboot
+   12  vi /etc/yum.repos.d/rhel7.repo
+   13  yum repolist
+   14  cat /etc/yum.repos.d/rhel7.repo
+   15  hostname
+   16  ifconfig | head -3
+   17  ifconfig 
+   18  vi /etc/bashrc
+   19  . /etc/bashrc
+   20  ip
+   21  exit
+   22   java -version  
+   23  ls
+   24  tar -xf apache-tomcat-8.0.30.tar.gz
+   25  cd lnmp_soft/
+   26  ls
+   27  tar -xf apache-tomcat-8.0.30.tar.gz
+   28  mv apache-tomcat-8.0.30 /usr/local/tomcat
+   29  ls /usr/local/tomcat
+   30  /usr/local/tomcat/bin/startup.sh
+   31  firewall-cmd --set-default-zone=trusted
+   32  setenforce 0
+   33  netstat -nutlp |grep java
+   34  firefox http://192.168.2.200:8080
+   35  ifconfig
+   36  /usr/local/tomcat/bin/shutdown.sh
+   37  vim /usr/local/tomcat/conf/server.xml
+   38  echo "a2" > /var/www/html/index.html
+   39  /usr/local/tomcat/bin/shutdown.sh
+   40  exit
+   41  cd /tmp/code/
+   42  ls
+   43  cat umount.target
+   44  history
+   45  rpm -qa |grep nginx
+   46  ifconfig
+   47  rpm -qa |grep nginx
+   48  ls /root
+   49  rpm -ivh /root/nginx-1.12.2-10.x86_64.rpm
+   50  rpm -qa |grep nginx
+   51  /usr/local/nginx/sbin/nginx
+   52  curl http://127.0.0.1/
+   53  mkdir test
+   54  cd test/
+   55  svn --username harry --password harry co svn://192.168.2.100/  code1
+   56  cd code1
+   57  ls
+   58  vim test.txt
+   59  svn ci -m "vim test.txt"
+   60  svn add test.txt 
+   61  svn ci -m "vim test.txt"
+   62  svn mkdir subdir
+   63  svn rm test.txt 
+   64  svn ci -m "test"
+   65  svn diff
+   66  ls
+   67  touch test.sh
+   68  ls
+   69  svn add test.sh -m "test"
+   70  svn add test.sh
+   71  svn ci -m "tewt"
+   72  svn update
+   73  ls
+   74  svn log
+   75  svn cat
+   76  svnadmin dump /var/svn/project2 > project2.bak
+   77  cd ..
+   78  ls
+   79  svnadmin dump /var/svn/code1 > project2.bak
+   80  cd ..
+   81  ls /var/svn
+   82  ls
+   83  cd test
+   84  ls
+   85  cat project2.bak 
+   86  ls project2.bak 
+   87  mv project2.bak project2
+   88  ls
+   89  cd project2
+   90  pwd
+   91  cd /tmp
+   92  ls
+   93  rm -rf /tmp/*
+   94  ls /tmp
+   95  svn --username harry --password harry co svn://192.168.2.100/ code
+   96  ls
+   97  cd code
+   98  ls
+   99  vim user.slice 
+  100  svn ci -m "modify user"
+  101  svn update
+  102  svn info svn://192.168.2.100
+  103  svn log svn://192.168.2.100
+  104  echo "test" > test.sh
+  105  svn ci -m "new file"
+  106  ls
+  107  svn update
+  108  ls
+  109  rm -rf test.sh 
+  110  svn update
+  111  ls
+  112  ls | grep test
+  113  echo "test" > test.sh
+  114  ls | grep test
+  115  rm -rf test.sh 
+  116  ls | grep test
+  117  echo "test" > test.sh
+  118  svn add test.sh
+  119  svn ci -m "new file"
+  120  rm -rf test.sh
+  121  ls | grep test
+  122  svn update
+  123  ls | grep test
+  124  vim umount.target 
+  125  svn diff
+  126  svn diff umount.target 
+  127  svn cat svn://192.168.2.100/umount.target
+  128  sed -i "-d" tmp.mount 
+  129  ls
+  130   sed -i 'd' tmp.mount 
+  131  cat tmp.mount 
+  132  svn rever tmp.mount 
+  133  svn revert tmp.mount 
+  134  cat tmp.mount 
+  135  rm -rf *.target
+  136  ls | grep *.target
+  137  svn update
+  138  ls | grep *.target
+  139  ls | grep .target
+  140  sed -i '1a#test###' tuned.service
+  141  cat tuned.service
+  142  svn ci -m "test"
+  143  svn info
+  144  svn merge -r4:3 tuned.service 
+  145  cat tuned.service 
+  146  ifconfig
+  147  cd ..
+  148  svn --username harry --password harry co svn://192.168.2.100/project code
+  149  ls
+  150  svn --username harry --password harry co svn://192.168.2.100/test code1
+  151  ls
+  152  cd ~
+  153  ls
+  154  rm -rf test/*
+  155  cd test/
+  156  ls
+  157  svn --username harry --password harry co svn://192.168.2.100/ code
+  158  svn --username harry --password harry co svn://192.168.2.100/
+  159  ls
+  160  svn --username harry --password harry co svn://192.168.2.100/ code
+  161  ls
+  162  cd code
+  163  ls
+  164  sed -i "3a #######" umount.target 
+  165  svn ci -m "hsa]"
+  166  svn update
+  167  svn --username tom --password tom co svn://192.168.2.100/ code
+  168  sed -i "3a ###harry modify#####" user.slice
+  169  svn ci -m "mode"
+  170  svn ci -m "modew"
+  171  sed -i '1c [unit]' tuned.service 
+  172  svn -ci -m "tslkdfj"
+  173  svn ci -m "tslkdfj"
+  174  svn update
+  175  ls
+  176  mv tuned.service.mine tuned.service
+  177  ls tuned*
+  178  rm -rf tuned.service.r*
+  179  svn ci -m "modified"
+  180  history 
+
+
+
